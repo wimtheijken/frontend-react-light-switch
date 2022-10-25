@@ -1,64 +1,75 @@
-button {
-    background-color: #1b95e0;
-    border-color: #1b95e0;
-    color: white;
-    font-size: 24px;
-    padding: 8px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Work+Sans:wght@400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.lightbulb-wrapper {
-    height: 300px;
-    position: relative;
-}
-
-.lightbulb-wrapper > div {
+main {
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    position: absolute;
-    top: 70px;
-    left: 17px;
-    z-index: 1;
-    transition: box-shadow 0.2s ease-in-out;
 }
 
-svg#bulb {
-    fill: #F6E27F;
-    transition: all 0.4s ease-in-out;
+main.on {
+    background-color: #f2e9e4;
 }
 
-svg#base {
-    fill: #B1C1C0;
-    margin-top: 5px;
+main.off {
+    background-color: #22223b;
 }
 
-.light::after {
-    content: '';
-    display: block;
-    background-color: transparent;
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 3px;
-    z-index: -1;
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    height: 70px;
+.dot {
     width: 70px;
-    transition: box-shadow 0.2s ease-in-out;
+    height: 70px;
+    border-radius: 50px;
+    box-shadow: 0 0 4px rgb(0 0 0 / 10%), 0 2px 4px rgb(0 0 0 / 20%)
 }
 
-.light::after {
-    box-shadow: 0 0 40px 15px #f6e27fa3;
-    transition: box-shadow 0.2s ease-in-out;
+.off .dot {
+    border: 10px solid #f2e9e4;
+    background-color: #4a4e69;
 }
 
-.dark::after {
-    box-shadow: none;
-    transition: box-shadow 0.2s ease-in-out;
+.on .dot {
+    border: 10px solid #FFFFFF;
+    background-color: #fca311;
 }
 
-.dark svg#bulb {
-    fill: #B1C1C0;
+button {
+    text-align: center;
+    display: inline-block;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 20px 40px;
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: #c9ada7;
+    color: white;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    top: -3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    background: #BF9E96;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    top: 0;
 }
